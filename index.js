@@ -6,6 +6,8 @@ const app = express();
 const warehouseRoutes = require("./routes/warehouseRoute");
 const inventoryRoutes = require("./routes/inventoryRoute");
 
+app.use(express.json());
+
 app.use("/warehouses", warehouseRoutes);
 app.use("/inventories", inventoryRoutes);
 
