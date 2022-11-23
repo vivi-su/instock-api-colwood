@@ -77,3 +77,20 @@ exports.addWarehouse = (req, res) => {
     })
     .catch((err) => res.status(400).send(`Error creating Warehouse: ${err}`));
 };
+
+
+exports.updateWarehouse = (req, res) => {
+  knex("warehouses")
+    .update(req.body)
+    .where({ id: req.params.id })
+    .then((_data) => {
+      knex("warehouses")
+        .where({ id: req.params.id })
+        .then((data) => {
+          res.status(200).json(data[0]);
+        });
+    })
+    .catch((err) =>
+      res.status(400).send(`Error updating Warehouse ${req.params.id} ${err}`)
+    );
+};
