@@ -9,6 +9,27 @@ exports.index = (_req, res) => {
     .catch((err) => res.status(400).send(`Error retrieving Inventory: ${err}`));
 };
 
+exports.singleInventoryItem = (req, res) => {
+  knex("inventories")
+    .where({ id: req.params.id })
+    .then((data) => {
+      // If record is not found, respond with 404
+      if (!data.length) {
+        return res
+          .status(404)
+          .send(`Record with id: ${req.params.id} is not found`);
+      }
+
+      // Knex returns an array of records, so we need to send response with a single object only
+      res.status(200).json(data[0]);
+    })
+    .catch((err) =>
+      res
+        .status(400)
+        .send(`Error retrieving inventory item ${req.params.id} ${err}`)
+    );
+};
+
 exports.addInventoryItem = (req, res) => {
   // Validate the request body for required data
   if (
@@ -36,5 +57,7 @@ exports.addInventoryItem = (req, res) => {
           res.status(201).json(data[0]);
         });
     })
-    .catch((err) => res.status(400).send(`Error creating inventory Item: ${err}`));
+    .catch((err) =>
+      res.status(400).send(`Error creating inventory Item: ${err}`)
+    );
 };
