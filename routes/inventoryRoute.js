@@ -6,4 +6,9 @@ router
     .get(inventoryController.index)
     .post(inventoryController.addInventoryItem);
 
+
+
+
+
+
 module.exports = router;
