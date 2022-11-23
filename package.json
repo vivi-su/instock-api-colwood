@@ -21,5 +21,13 @@
   "devDependencies": {
     "nodemon": "^2.0.20"
   },
-  "description": ""
+  "description": "### Add .env file with DB_LOCAL_DBNAME = \"<your_db_username>\"",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alinebellozo/instock-api-colwood.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alinebellozo/instock-api-colwood/issues"
+  },
+  "homepage": "https://github.com/alinebellozo/instock-api-colwood#readme"
 }
