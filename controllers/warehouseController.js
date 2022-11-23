@@ -11,7 +11,6 @@ exports.index = (_req, res) => {
     );
 };
 
-
 exports.singleWarehouse = (req, res) => {
   knex("warehouses")
     .where({ id: req.params.id })
@@ -77,7 +76,6 @@ exports.addWarehouse = (req, res) => {
     })
     .catch((err) => res.status(400).send(`Error creating Warehouse: ${err}`));
 };
-
 
 exports.updateWarehouse = (req, res) => {
   knex("warehouses")

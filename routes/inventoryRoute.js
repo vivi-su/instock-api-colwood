@@ -9,7 +9,7 @@ router
 router
   .route("/:id")
   .get(inventoryController.singleInventoryItem)
+  .put(inventoryController.updateInventoryItem)
   .delete(inventoryController.deleteInventoryItem);
-
 
 module.exports = router;

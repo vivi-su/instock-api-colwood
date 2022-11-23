@@ -62,6 +62,21 @@ exports.addInventoryItem = (req, res) => {
     );
 };
 
+exports.updateInventoryItem = (req, res) => {
+  knex("inventories")
+    .update(req.body)
+    .where({ id: req.params.id })
+    .then((_data) => {
+      knex("inventories")
+        .where({ id: req.params.id })
+        .then((data) => {
+          res.status(200).json(data[0]);
+        });
+    })
+    .catch((err) =>
+      res.status(400).send(`Error updating Inventory Item ${req.params.id} ${err}`)
+    );
+};
 
 exports.deleteInventoryItem = (req, res) => {
   knex("inventories")
@@ -79,5 +94,3 @@ exports.deleteInventoryItem = (req, res) => {
         .send(`Error deleting InventoryItem ${req.params.id} ${err}`)
     );
 };
-
-
