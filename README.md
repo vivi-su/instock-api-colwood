@@ -7,3 +7,4 @@
 ### Add .env file with DB_LOCAL_PASSWORD = "<your_db_password>"
 
 ### To run the server, execute - `npm run dev`
+# instock-api-colwood
