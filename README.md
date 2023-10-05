@@ -63,8 +63,11 @@ The front-end was built using React (Axios,Scss and React Router Dom). The app a
 
 ### Tech Stack
 Back-end built in NodeJS and ExpressJS on the foundation of MYSQL database and connected with Knex.
+
 Front-end built in React(create-react-app), BEM/SCSS and react-router-dom.
+
 * npm to install packages that will aid in project development
+  
 * Postman
 
 ### What We Learned
